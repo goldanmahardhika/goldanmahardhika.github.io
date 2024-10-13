@@ -1,0 +1,44 @@
+.jumbotron {
+  padding-top: 6rem;
+  background-color: #e2edff;
+}
+
+#history {
+  background-color: #e2edff;
+}
+
+section {
+  padding-top: 6rem;
+}
+
+body {
+  font-family: "Open Sans";
+  font-size: smaller;
+}
+
+#gg {
+  font-family: "Open Sans";
+  font-size: smaller;
+  text-align: center;
+  padding-left: 1rem;
+}
+
+#ss {
+  font-family: "Open Sans";
+  font-weight: bold;
+}
+
+#cs {
+  font-family: "Open Sans";
+  font-weight: lighter;
+  color: #f8f415;
+}
+#cd {
+  font-family: "Open Sans";
+  font-weight: lighter;
+}
+
+#sss {
+  color: #b6b6b6;
+  font-size: x-large;
+}
