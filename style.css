@@ -12,29 +12,30 @@ section {
 }
 
 body {
-  font-family: "Open Sans";
+  font-family: 'Poppins', sans-serif;
   font-size: smaller;
 }
 
 #gg {
-  font-family: "Open Sans";
+  font-family: 'Poppins', sans-serif;
   font-size: smaller;
   text-align: center;
   padding-left: 1rem;
 }
 
 #ss {
-  font-family: "Open Sans";
+  font-family: 'Poppins', sans-serif;
   font-weight: bold;
 }
 
 #cs {
-  font-family: "Open Sans";
+  font-family: 'Poppins', sans-serif;
   font-weight: lighter;
   color: #f8f415;
 }
+
 #cd {
-  font-family: "Open Sans";
+  font-family: 'Poppins', sans-serif;
   font-weight: lighter;
 }
 
