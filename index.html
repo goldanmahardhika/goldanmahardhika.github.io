@@ -98,12 +98,28 @@
             color: #4facfe;
         }
 
-        .hero p {
-            font-size: 1.2rem;
-            color: #aaa;
-            max-width: 600px;
-            margin-bottom: 30px;
+        .typing-container {
+            font-size: 1.5rem; 
+            margin-bottom: 40px;
+            min-height: 1.6em; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center;
         }
+        #typing-text {
+            color: #ffffff; 
+            font-weight: 600; 
+            margin-right: 5px; 
+            margin-left: 8px;
+        }
+        .cursor {
+            display: inline-block; 
+            width: 3px; 
+            height: 28px; 
+            background-color: #4facfe;
+            animation: blink 1s infinite;
+        }
+        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
 
         .btn {
             display: inline-block;
@@ -148,10 +164,8 @@
             grid-template-columns: 1fr;
             gap: 20px;
             text-align: center;
-
-            font-size: 1.2rem; /* Font size */
+            font-size: 1.3rem; /* Font size */
             line-height: 1.8; /* Line spacing */
-            
         }
 
         /* --- PROJECTS / PORTFOLIO --- */
@@ -164,9 +178,17 @@
         .project-card {
             background: #1e1e1e;
             padding: 20px;
-            border-radius: 10px;
+            border-radius: 12px;
             transition: 0.3s;
             border: 1px solid #333;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            border-color: #4facfe;
+            box-shadow: 0 10px 20px rgba(51, 51, 51, 0.3); /* Bonus: tambah bayangan sedikit biar makin terasa */
         }
 
         .project-card img {
@@ -176,27 +198,34 @@
             border-radius: 8px;
             margin-bottom: 15px; 
         }
-        
-        .project-card:hover {
-            transform: translateY(-10px);
-            border-color: #4facfe;
-        }
 
         .project-card h3 {
             margin-bottom: 10px;
             color: #fff;
+            font-size: 1.2rem;
         }
 
         .project-card p {
             font-size: 0.9rem;
             color: #bbb;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
+            flex-grow: 1; 
         }
 
         .project-link {
             color: #4facfe;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            transition: 0.3s;
+            margin-top: auto; 
+        }
+
+        .project-link:hover {
+            color: #eeeeee;
+            gap: 10px;
         }
 
         /* --- CONTACT --- */
@@ -241,7 +270,8 @@
         /* --- RESPONSIVE MEDIA QUERIES --- */
         @media (max-width: 768px) {
             .hero h1 { font-size: 2rem; }
-            nav { display: none; } /* Sederhanakan menu untuk mobile demo ini */
+            .typing-container { font-size: 1.2rem; }
+            nav { display: none; } 
             section { padding: 60px 5%; }
         }
     </style>
@@ -263,7 +293,11 @@
         <img src="img/2.JPG" alt="Goldan Mahardhika" width="200" class="profile-img">
         
         <h1>Goldan Mahardhika</h1>
-        <p>3D Artist - Also interested in Crypto & Web 3</p>
+        
+        <div class="typing-container">
+            <span id="typing-text"></span><span class="cursor"></span>
+        </div>
+
         <a href="#projects" class="btn">Explore My Portfolio</a>
     </section>
 
@@ -271,64 +305,70 @@
         <h2 class="section-title">About Me</h2>
         <div class="about-content">
             <p>
-                I'm Goldan Mahardhika who passionate in 3D Modeling and Lighting I got several experiences as Render Artist at Mocca Studio 
-                and 4 Crows Digital, these are Animation Studios based in Malang. I do teamworking on 3D Lighting set, Rendering and Compositing with Blender and Nuke Software. 
+                I'm Goldan Mahardhika, a passionate 3D Artist specializing in Modeling and Lighting.
+                I got several experiences as Render Artist at Mocca Studio and 4 Crows Digital. I do teamworking on 3D Lighting set, Rendering and Compositing with Blender and Nuke Software.
                 One of the biggest project i ever work is “Lil Wild Season 3” an Children’s television Animation series.
             </p>
         </div>
     </section>
 
-<section id="projects">
+    <section id="projects">
         <h2 class="section-title">Projects</h2>
         <div class="projects-grid">
-            
             <div class="project-card">
                 <img src="img/3.jpg" alt="Lil Wild Season 3">
                 <h3>Lil Wild Season 3</h3>
-                <p>Children television Animation series.</p>
-                <a href="https://www.youtube.com/watch?v=c7SuSIiWNYw/?img_index=1" class="project-link">See Detail &rarr;</a>
+                <p>Lighting and Render Artist for Children's Animation series.</p>
+                <a href="https://www.youtube.com/watch?v=c7SuSIiWNYw/?img_index=1" class="project-link">Watch Project &rarr;</a>
             </div>
             
             <div class="project-card">
                 <img src="img/4.jpg" alt="Cleo and Cuquin">
                 <h3>Cleo and Cuquin</h3>
-                <p>Children television Animation series.</p>
-                <a href="https://www.youtube.com/watch?v=_3TuQvsTzJg/?img_index=1" class="project-link" target="_blank">See Detail &rarr;</a>
+                <p>Lighting and Render Artist for Children's animation series.</p>
+                <a href="https://www.youtube.com/watch?v=_3TuQvsTzJg/?img_index=1" class="project-link" target="_blank">Watch Project &rarr;</a>
             </div>
 
             <div class="project-card">
                 <img src="img/5.jpg" alt="AlienCG Trailer">
                 <h3>AlienCG Trailer</h3>
-                <p>AlienCG</p>
-                <a href="https://youtu.be/BQJhHZa31F0?si=hmLU-2nfuK89-bcO/?img_index=1" class="project-link" target="_blank">See Detail &rarr;</a>
+                <p></p>
+                <a href="https://youtu.be/BQJhHZa31F0?si=hmLU-2nfuK89-bcO/?img_index=1" class="project-link" target="_blank">Watch Project &rarr;</a>
             </div>
 
             <div class="project-card">
                 <img src="img/8.png" alt="KMIPN VI">
                 <h3>KMIPN VI Animation Competition 2024</h3>
                 <p>2nd Place Winner “Animation” at National Polytechnic Informatics Student Competition (KMIPN VI) 2024.</p>
-                <a href="https://youtu.be/ta23iUDek4E?si=DkseGpQzJwUa-cF4/?img_index=1" class="project-link" target="_blank">See Detail &rarr;</a>
+                <a href="https://youtu.be/ta23iUDek4E?si=DkseGpQzJwUa-cF4/?img_index=1" class="project-link" target="_blank">Watch Project &rarr;</a>
             </div>
 
             <div class="project-card">
                 <img src="img/6.jpg" alt="MMB Fest Mascot">
                 <h3>Mascot for MMB Fest</h3>
                 <p>3D Mascot making for MMB Fest exhibition event. (@mmbfest) on Instagram.</p>
-                <a href="https://www.instagram.com/mmbfest" class="project-link" target="_blank">See Detail &rarr;</a>
+                <a href="https://www.instagram.com/mmbfest" class="project-link" target="_blank">View Details &rarr;</a>
             </div>
 
             <div class="project-card">
                 <img src="img/7.png" alt="Theatricals Bumper">
                 <h3>3D Theatricals Music (Bumper)</h3>
                 <p>3D Bumper making for Theatricals Music Performance. (@wonderlands.wonder) on Instagram.</p>
-                <a href="https://www.youtube.com/live/cnKrnNk4YR4?si=Aai8DixyAPfAEzFt" class="project-link" target="_blank">See Detail &rarr;</a>
+                <a href="https://www.youtube.com/live/cnKrnNk4YR4?si=Aai8DixyAPfAEzFt" class="project-link" target="_blank">View Details &rarr;</a>
             </div>
 
             <div class="project-card">
                 <img src="img/9.png" alt="Pokémon GO Bumper">
                 <h3>Pokémon GO PGTraveler (Bumper)</h3>
                 <p>Creating a 3D bumper - Working as a team, I contributed by handling the 3D Asset Environment.</p>
-                <a href="https://www.youtube.com/watch?v=XLxKvS1e-nU" class="project-link" target="_blank">See Detail &rarr;</a>
+                <a href="https://www.youtube.com/watch?v=XLxKvS1e-nU" class="project-link" target="_blank">View Details &rarr;</a>
+            </div>
+
+            <div class="project-card">
+                <img src="img/10.jpg" alt="Intro Bumper">
+                <h3>3D Intro Bumper</h3>
+                <p>Creating a 3D bumper - Working as a team, I contributed by handling the 3D general</p>
+                <a href="https://drive.google.com/file/d/1szkimgv1E6h26GGnux6vLbUsje8508ML/view?usp=sharing" class="project-link" target="_blank">Watch Project &rarr;</a>
             </div>
         </div>
     </section>
@@ -336,36 +376,41 @@
     <section id="personal">
         <h2 class="section-title">Personal Projects</h2>
         <div class="projects-grid">
-            
             <div class="project-card">
                 <img src="img/p1_1.png" alt="Numa House Model">
                 <h3>Numa House Model</h3>
                 <p>3D stylized numa house model using Blender.</p>
-                <a href="img/p1_1.png" target="_blank" class="project-link" target="_blank">See Image &rarr;</a>
+                <a href="img/p1_1.png" target="_blank" class="project-link">View Image &rarr;</a>
             </div>
 
             <div class="project-card">
                 <img src="img/p2.png" alt="Stylized House Model">
                 <h3>Stylized House Model</h3>
                 <p>3D stylized house model using Blender.</p>
-                <a href="img/p2.png" target="_blank" class="project-link" target="_blank">See Image &rarr;</a>
+                <a href="img/p2.png" target="_blank" class="project-link">View Image &rarr;</a>
             </div>
 
             <div class="project-card">
-                <img src="img/p3.png" alt="Stylized House Model">
+                <img src="img/p3.png" alt="High Poly Ship">
                 <h3>High Poly Ship</h3>
                 <p>3D high poly ship model using Blender.</p>
-                <a href="img/p3.png" target="_blank" class="project-link" target="_blank">See Image &rarr;</a>
+                <a href="img/p3.png" target="_blank" class="project-link">View Image &rarr;</a>
             </div>
 
             <div class="project-card">
-                <img src="img/p4.png" alt="Stylized House Model">
+                <img src="img/p4.png" alt="High Poly Kitchen">
                 <h3>High Poly Kitchen</h3>
                 <p>3D high poly kitchen model using Blender.</p>
-                <a href="img/p4.png" target="_blank" class="project-link" target="_blank">See Image &rarr;</a>
+                <a href="img/p4.png" target="_blank" class="project-link">View Image &rarr;</a>
             </div>
             
+            <div class="project-card">
+                <img src="img/p5.png" alt="Dreamy Smile">
+                <h3>Dreamy Smile</h3>
+                <p>Surrealism Smile art</p>
+                <a href="https://drive.google.com/file/d/1RFhj2vns3ab35JcREMiL4kNOAFiXcAzW/view?usp=sharing" target="_blank" class="project-link">Watch Project &rarr;</a>
             </div>
+        </div>
     </section>
 
     <section id="contact" class="contact">
@@ -373,6 +418,7 @@
         <p>Interact with me on Social Media!</p>
         
         <div class="social-links">
+            <a href="https://www.tiktok.com/@thelazydhika" target="_blank"><i class="fab fa-tiktok"></i></a>
             <a href="https://www.instagram.com/goldannm/" target="_blank"><i class="fab fa-instagram"></i></a>
             <a href="https://x.com/goldannn_05" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
             <a href="https://www.linkedin.com/in/goldan-mahardhika-090702263/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
@@ -384,5 +430,27 @@
         <p>&copy; 2024 Goldan Mahardhika</p>
     </footer>
 
+    <script>
+        const textElement = document.getElementById('typing-text');
+        const phrases = ["3D Artist", "Interested in Crypto & Web 3"];
+        let phraseIndex = 0; let charIndex = 0; let isDeleting = false;
+
+        function type() {
+            const currentPhrase = phrases[phraseIndex];
+            if (isDeleting) {
+                textElement.textContent = currentPhrase.substring(0, charIndex - 1); charIndex--;
+            } else {
+                textElement.textContent = currentPhrase.substring(0, charIndex + 1); charIndex++;
+            }
+            let typeSpeed = isDeleting ? 40 : 50;
+            if (!isDeleting && charIndex === currentPhrase.length) {
+                typeSpeed = 2000; isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false; phraseIndex = (phraseIndex + 1) % phrases.length; typeSpeed = 500;
+            }
+            setTimeout(type, typeSpeed);
+        }
+        document.addEventListener('DOMContentLoaded', type);
+    </script>
 </body>
 </html>
